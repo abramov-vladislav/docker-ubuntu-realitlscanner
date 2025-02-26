@@ -1,9 +1,9 @@
-# Указываем, что образ должен поддерживать несколько платформ (windows и macos)
+# Используем образ Ubuntu 24.04
 FROM ubuntu:24.04
 
 # Устанавливаем необходимые пакеты
 RUN apt update && apt install -y \
-    golang-1.21-go \
+    golang-go \
     git \
     wget \
     && rm -rf /var/lib/apt/lists/*
@@ -28,3 +28,6 @@ RUN chmod +x RealiTLScanner
 
 # Скачиваем файл Country.mmdb
 RUN wget https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb
+
+# Запускаем команду, которая будет поддерживать контейнер живым (бесконечный процесс)
+CMD ["tail", "-f", "/dev/null"]
