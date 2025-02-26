@@ -1,13 +1,20 @@
-# docker-ubuntu-realitlscanner
-
+# Сборка Docker-образа
+```
 docker build -t realitlscanner .
-
+```
+# Запуск контейнера
+```
 docker run --name ubuntu-realitlscanner realitlscanner
+```
 
+# Вход в контейнер
+```
+docker exec -it ubuntu-realitlscanner bash
+```
 
-Usage
-It is recommended to run this tool locally, as running the scanner in the cloud may cause the VPS to be flagged.
+# RealiTLScanner:
 
+```
 # Show help
 ./RealiTLScanner
 
@@ -35,3 +42,4 @@ It is recommended to run this tool locally, as running the scanner in the cloud 
 
 # Set a timeout for each scan, default: 10 (seconds)
 ./RealiTLScanner -addr 107.172.1.1/16 -timeout 5
+```
